@@ -1,5 +1,6 @@
 import React from "react";
 // import "/home/coditas/Image Gallery/myapp/src/Css/Cart.css";
+import "./CSS/Cart.css";
 export default function Cart(props) {
   console.log(props);
   const { productsInCart, addProductToCart, removeProductFromCart } = props;

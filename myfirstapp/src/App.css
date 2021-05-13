@@ -143,6 +143,10 @@ figure figcaption {
   color: #fefefe;
 }
 
+.MuiFormHelperText-root {
+  color: red !important;
+}
+
 /* About(artwork detail) */
 /* .about {
   margin-top: 20px;

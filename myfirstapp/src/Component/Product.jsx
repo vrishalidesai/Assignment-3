@@ -99,7 +99,18 @@ const Product = (props) => {
             {/* <Link to="/cart"><button onClick={()=>this.AddBtnClick(this.props.id)} className="add-products">add to cart</button></Link> */}
 
             <Link to="/cart">
-              <button className="add-products">add to cart</button>
+              <button
+                className="add-products"
+                onClick={() =>
+                  props.addProductToCart({
+                    productId: props.productId,
+                    productPrice: props.productPrice,
+                    productTitle: props.productTitle,
+                  })
+                }
+              >
+                add to cart
+              </button>
             </Link>
           </div>
         </div>
