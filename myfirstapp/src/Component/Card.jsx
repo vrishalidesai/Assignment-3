@@ -15,8 +15,6 @@ const Card = (props) => {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </p>
-            {/* <NavLink to="/artworkdetail" className="btn btn-primary">Details</NavLink> */}
-            {/* <button onClick={clickHandle} className="btn btn-primary">Details</button> */}
             <button
               onClick={() => {
                 props.setSelectedId(props.id);

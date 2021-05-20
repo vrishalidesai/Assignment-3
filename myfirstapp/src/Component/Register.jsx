@@ -14,15 +14,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-
-// import {NavLink } from 'react-router-dom';
 const Register = () => {
   const paperStyle = { padding: 20, width: 300, margin: "20px auto" };
   const headerStyle = { margin: 0 };
   const avtarStyle = { backgroundColor: "#4ed290" };
-  // const marginTop={marginTop:5}
-  // const cssStyle={textDecoration:"none"}
-
   const initialValues = {
     name: "",
     email: "",
@@ -62,7 +57,7 @@ const Register = () => {
           <Avatar style={avtarStyle}>
             <AddCircleOutlineIcon />{" "}
           </Avatar>
-          <h2 style={headerStyle}>Sign Up</h2>
+          <h2 style={headerStyle}>Register</h2>
         </Grid>
         <Formik
           initialValues={initialValues}
@@ -128,8 +123,6 @@ const Register = () => {
                 {<ErrorMessage name="termsAndConditions" />}
               </FormHelperText>
               <br />
-
-              {/* <NavLink to="/" style={cssStyle}><Button type="submit" color="primary" variant="contained" >Register</Button></NavLink><br/><br/> */}
               <Button
                 type="submit"
                 variant="contained"

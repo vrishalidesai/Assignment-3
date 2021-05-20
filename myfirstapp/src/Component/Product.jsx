@@ -1,69 +1,10 @@
-// import {reactLocalStorage} from 'reactjs-localstorage';
-// import React,{Component} from 'react'
 import React from "react";
 import { Link } from "react-router-dom";
 
 const cssStyle = {
   color: "#e24e4e",
 };
-// class Products extends Component{
-//    constructor(props){
-//        super(props);
-//        this.state={
-//            cartData:[]
-//        }
-//    }
 
-//    AddBtnClick= async(ID)=>{
-//        try{
-
-//        console.log('CartData:'+this.state.cartData);
-//        console.log("Id:" + ID);
-//     var exist=false;
-//     var list=[];
-//        if(Array.isArray(!this.state.cartData)&& !this.state.cartData.length){
-//       exist = this.state.cartData.some(item=>item.id===ID)
-//     console.log(exist);
-//     if(exist){
-//         alert('Alredy exist');
-//     }
-//     else{
-//      list= this.state.cartData.concat({id:this.props.id,image:this.props.imageUrl, title:this.props.title,price:this.props.price})
-//     this.setState({
-//         cartData:this.state.cartData.concat({id:this.props.id,image:this.props.imageUrl, title:this.props.title,price:this.props.price})
-//     })
-
-//      }
-//    }
-//    else{
-
-//        list.push( {id:this.props.id,image:this.props.imageUrl, title:this.props.title,price:this.props.price})
-//     this.setState({
-//         cartData:list
-//     })
-//     console.log('list',JSON.stringify(list));
-//     }
-// }
-// catch{
-//     console.log("error");
-// }
-// finally{
-// console.log("cartdata:",JSON.stringify(list));
-//   await reactLocalStorage.set('CART_DATA',JSON.stringify(this.state.list))
-// }
-
-// }
-
-//    componentDidMount(){
-//      // reactLocalStorage.remove('CART_DATA')
-//      var CartData = reactLocalStorage.get('CART_DATA');
-//      this.setState({
-//         cartData: CartData
-//      })
-//      console.log("CartData:" +CartData);
-//    }
-//     render(props){
-//     console.log(props);
 const Product = (props) => {
   return (
     <div>
@@ -101,15 +42,21 @@ const Product = (props) => {
             <Link to="/cart">
               <button
                 className="add-products"
-                onClick={() =>
+                onClick={() => {
                   props.addProductToCart({
-                    productId: props.productId,
-                    productPrice: props.productPrice,
-                    productTitle: props.productTitle,
-                  })
-                }
+                    productId: props.id,
+                    productPrice: props.price,
+                    productTitle: props.title,
+                  });
+                }}
               >
                 add to cart
+              </button>
+              <button
+                className="remove-products"
+                onClick={() => props.removeProductFromCart(props.productId)}
+              >
+                remove from cart
               </button>
             </Link>
           </div>

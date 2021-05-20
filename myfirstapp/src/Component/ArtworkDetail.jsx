@@ -27,13 +27,6 @@ export default class ArtWorkDetail extends React.Component {
       "Loading"
     ) : (
       <div className="container py-3">
-        {/* <Products
-key={this.state.photos[0].id}
-imgsrc={this.state.photos[0].imageUrl}
-title={this.state.photos[0].title}
-price={this.state.photos[0].price}
-genre={this.state.photos[0].genre}/>
- */}
         {this.state.photos.map((items) => {
           console.log("ID:" + items.id);
           return (

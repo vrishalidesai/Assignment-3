@@ -1,5 +1,5 @@
 import React from "react";
-// import "/home/coditas/Image Gallery/myapp/src/Css/Cart.css";
+import { Link } from "react-router-dom";
 import "./CSS/Cart.css";
 export default function Cart(props) {
   console.log(props);
@@ -45,13 +45,13 @@ export default function Cart(props) {
             <div className="product">{item.productPrice}</div>
             <div>
               <button
-                onClick={() =>
-                  addProductToCart({
+                onClick={() => {
+                  props.addProductToCart({
                     productId: item.productId,
                     productPrice: item.productPrice,
                     productTitle: item.productTitle,
-                  })
-                }
+                  });
+                }}
                 className="add"
               >
                 +
@@ -81,12 +81,9 @@ export default function Cart(props) {
           </div>
           <hr />
           <div className="row">
-            <button
-              className="btn btn-primary text-center"
-              onClick={() => alert("Thank You")}
-            >
-              Checkout
-            </button>
+            <Link to="/checkout">
+              <button className="btn btn-primary text-center">Checkout</button>
+            </Link>
           </div>
         </>
       )}
